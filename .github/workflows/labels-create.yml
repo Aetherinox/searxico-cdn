@@ -1,23 +1,37 @@
-# ---------------------------------------------------------------------------------------
+# #
 #   @parent     : github workflow
 #   @desc       : manually activated workflow to create issue labels
 #   @author     : Aetherinox
 #   @url        : https://github.com/Aetherinox
-# ---------------------------------------------------------------------------------------
+#
+#   This Github action must be activated manually.  This workflow script will do the
+#   following:
+#
+#       - Scan issues / pull requests and make sure they have properly assigned labels:
+#           - `Bug`
+#           - `Feature`
+#           - `Urgent`
+#           - `Roadmap`
+#
+#       - Workflow script will then scan each pr or issue and mark them as `Stale`
+#         if they haven't had any replies in 30 days.
+#
+#       - Workflow will `autoclose` pr or issues which haven't had action in `365 days`.
+# #
 
 name: "🎫 Labels › Create"
 run-name: "🎫 Labels › Create"
 
-# ---------------------------------------------------------------------------------------
+# #
 #   triggers
-# ---------------------------------------------------------------------------------------
+# #
 
 on:
     workflow_dispatch:
 
-# ---------------------------------------------------------------------------------------
+# #
 #   environment variables
-# ---------------------------------------------------------------------------------------
+# #
 
 env:
     ASSIGN_USER:          Aetherinox
@@ -88,12 +102,12 @@ env:
 
 jobs:
 
-    # ---------------------------------------------------------------------------------------
-    #   Verify Existing Labels
-    #   This job will ensure you have labels already created in your repo.
+    # #
+    #   Job [ Verify / Create Labels ]
     #
+    #   This job will ensure you have labels already created in your repo.
     #   All labels come from the JSON table LABELS_JSON.
-    # ---------------------------------------------------------------------------------------
+    # #
 
     issues-labels-create:
         name: >-
@@ -107,27 +121,33 @@ jobs:
             name: Orion
         steps:
 
+            # #
+            #   [ Create Labels ] Start
+            # #
+
             - name: >-
                   ✅ Start
+              id: task_label_create_start
               run: |
                   echo "Assigning labels and assignees"
 
-            # ---------------------------------------------------------------------------------------
-            #   checkout
-            # ---------------------------------------------------------------------------------------
+            # #
+            #   [ Create Labels ] Checkout
+            # #
 
             - name: >-
-                    ☑️ Checkout
+                  ☑️ Checkout
+              id: task_label_create_checkout
               uses: actions/checkout@v4
               with:
                   fetch-depth: 0
 
-            # ---------------------------------------------------------------------------------------
-            #   Check if repo has labels currently added to issues
-            # ---------------------------------------------------------------------------------------
+            # #
+            #   [ Create Labels ] Verify Existing Labels
+            # #
 
             - name: >-
-                    🏷️ Verify Existing Labels
+                  🏷️ Verify Existing Labels
               uses: actions/github-script@v7
               with:
                   github-token: ${{ secrets.ADMINSERV_TOKEN_CL }}
