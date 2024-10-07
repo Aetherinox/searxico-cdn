@@ -56,7 +56,6 @@ env:
     LABEL_INTERNAL:       "Type ◦ Internal"
     LABEL_URGENT:         "⚠ Urgent"
 
-    ASSIGN_USER:          Aetherinox
     BOT_NAME_1:           AdminServ
     BOT_NAME_2:           AdminServX
     BOT_NAME_3:           EuropaServ
@@ -106,6 +105,7 @@ env:
           { "name": "› Enterprise",                 "color": "11447a", "description": "Issues about collaboration, administration, and so on" },
           { "name": "› Hardware",                   "color": "5a7503", "description": "YubiKey, other tokens, biometrics" },
           { "name": "› Import/Export",              "color": "F5FFCC", "description": "Import from and export to different file formats" },
+          { "name": "› Improvement",                "color": "185c98", "description": "Enhance an existing feature" },
           { "name": "› Performance",                "color": "006b75", "description": "Web and desktop performance issues" },
           { "name": "› Plugin Request",             "color": "FCE9CA", "description": "Requested changes should be implemented as a plugin" },
           { "name": "› Security",                   "color": "F75D39", "description": "Security issues" },
