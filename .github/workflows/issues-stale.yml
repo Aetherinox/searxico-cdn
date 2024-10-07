@@ -134,6 +134,8 @@ jobs:
   issues-labels-create:
     name: "🎫 Labels › Verify Existing"
     runs-on: ubuntu-latest
+    environment:
+        name: Orion
     steps:
 
       - name: "✅ Start"
