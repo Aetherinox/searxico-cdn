@@ -6,13 +6,13 @@
 
 <p>
 
-Used in combination with the [Searxico Favicon Worker](https://github.com/Aetherinox/searxico-cdn) to store favicons for various websites.
+Used in combination with the [Searxico Favicon Worker](https://github.com/Aetherinox/searxico-worker) to store favicons for various websites.
 
 </p>
 
 <br />
 
-<img src="https://raw.githubusercontent.com/Aetherinox/searxico-cdn/refs/heads/main/docs/img/banner.png" height="230">
+<img src="https://raw.githubusercontent.com/Aetherinox/searxico-worker/refs/heads/main/docs/img/banner.png" height="230">
 
 <br />
 <br />
@@ -118,7 +118,7 @@ If you need an easy solution for converting icons to `.ico` with the proper size
 
 <br />
 
-<p align="center"><img style="width: 80%;text-align: center;" src="https://raw.githubusercontent.com/Aetherinox/searxico-cdn/refs/heads/main/docs/img/icon-convert/1.png"></p>
+<p align="center"><img style="width: 80%;text-align: center;" src="https://raw.githubusercontent.com/Aetherinox/searxico-worker/refs/heads/main/docs/img/icon-convert/1.png"></p>
 
 <br />
 
@@ -199,7 +199,7 @@ The following people have helped get this project going:
 <table>
   <tbody>
     <tr>
-      <td align="center" valign="top"><a href="https://gitlab.com/Aetherinox"><img src="https://avatars.githubusercontent.com/u/118329232?v=4?s=40" width="80px;" alt="Aetherinox"/><br /><sub><b>Aetherinox</b></sub></a><br /><a href="https://github.com/Aetherinox/searxico-cdn/commits?author=Aetherinox" title="Code">💻</a> <a href="#projectManagement-Aetherinox" title="Project Management">📆</a> <a href="#fundingFinding-Aetherinox" title="Funding Finding">🔍</a></td>
+      <td align="center" valign="top"><a href="https://gitlab.com/Aetherinox"><img src="https://avatars.githubusercontent.com/u/118329232?v=4?s=40" width="80px;" alt="Aetherinox"/><br /><sub><b>Aetherinox</b></sub></a><br /><a href="https://github.com/Aetherinox/searxico-worker/commits?author=Aetherinox" title="Code">💻</a> <a href="#projectManagement-Aetherinox" title="Project Management">📆</a> <a href="#fundingFinding-Aetherinox" title="Funding Finding">🔍</a></td>
     </tr>
   </tbody>
 </table>
