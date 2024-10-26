@@ -1,8 +1,10 @@
 # #
-#   @parent     : github workflow
-#   @desc       : adds a label to a PR when the command "/accept" is typed in the issue comments
-#   @author     : Aetherinox
-#   @url        : https://github.com/Aetherinox
+#   @type               github workflow
+#   @desc               adds a label to a PR when the command "/accept" is typed in the issue comments
+#                           do not attempt to use env variables in if condition.
+#                           do not accept to change GITHUB_TOKEN.
+#   @author             Aetherinox
+#   @url                https://github.com/Aetherinox
 # #
 
 name: "🎫 Issue › Accept"
@@ -39,10 +41,8 @@ jobs:
     # #
 
     deploy:
+        if: contains(github.event.comment.body, '/accept') && github.event.comment.user.login == 'Aetherinox'
         runs-on: ubuntu-latest
-        if: github.event.issue.pull_request && contains(github.event.comment.body, '/accept') && github.event.comment.user.login == ${{ github.repository_owner }}
-        environment:
-            name: Orion
         steps:
 
             # #
@@ -53,7 +53,7 @@ jobs:
                   🏷️ Assign Label › ${{ env.LABEL_ACCEPT }}
               run: gh issue edit "$NUMBER" --add-label "$LABELS"
               env:
-                  GITHUB_TOKEN: ${{ secrets.SELF_TOKEN_CL }}
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                   GH_REPO: ${{ github.repository }}
                   NUMBER: ${{ github.event.issue.number }}
                   LABELS: ${{ env.LABEL_ACCEPT }}
@@ -66,7 +66,7 @@ jobs:
                   🏷️ Assign Assignee › ${{ github.repository_owner }}
               run: gh issue edit "$NUMBER" --add-assignee "$ASSIGNEE"
               env:
-                  GITHUB_TOKEN: ${{ secrets.SELF_TOKEN_CL }}
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                   GH_REPO: ${{ github.repository }}
                   NUMBER: ${{ github.event.issue.number }}
                   ASSIGNEE: ${{ github.repository_owner }}
